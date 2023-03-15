@@ -41,7 +41,6 @@ def test_find_suitable_user():
             suiable_user = user
     assert suiable_user == {"name": "Olga", "age": 45}
     # TODO найдите всех пользователей младше 20 лет
-    suiable_users = None
 
     ''' Решение циклом:
     # temp_list = []
