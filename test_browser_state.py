@@ -7,7 +7,6 @@ def test_dark_theme():
     """
     current_time = time(hour=23)
     # TODO переключите темную тему в зависимости от времени суток (с 22 до 6 часов утра - ночь)
-    is_dark_theme = None
     if current_time >= time(22) or current_time <= time(6):
         is_dark_theme = True
     else:
@@ -17,7 +16,6 @@ def test_dark_theme():
     dark_theme_enabled = True
     # TODO переключите темную тему в зависимости от времени суток,
     #  но учтите что темная тема может быть включена вручную
-    is_dark_theme = None
     if (current_time >= time(22) or current_time <= time(6)) or dark_theme_enabled:
         is_dark_theme = True
     else:
@@ -74,6 +72,7 @@ def test_find_suitable_user():
 
 def print_func_and_args(func_name, *args):
     name = (func_name.__name__.replace('_', ' ').title())
+    print(f"{name} [{', '.join(args)}]")
     return f"{name} [{', '.join(args)}]"
 
 
@@ -84,12 +83,12 @@ def test_readable_function():
 
 
 def open_browser(browser_name):
-    actual_result = "Open Browser [Chrome]"
+    actual_result = print_func_and_args(open_browser, browser_name)
     assert actual_result == "Open Browser [Chrome]"
 
 
 def go_to_companyname_homepage(page_url):
-    actual_result = "Go To Companyname Homepage [https://companyname.com]"
+    actual_result = print_func_and_args(go_to_companyname_homepage, page_url)
     assert actual_result == "Go To Companyname Homepage [https://companyname.com]"
 
 
